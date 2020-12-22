@@ -1,0 +1,75 @@
+<html>
+<head><script>import { Override, Data } from "framer"
+
+const appState = Data({
+    cards: [],
+    circles: [],
+    items: [0, 1, 2],
+    positions: [{ left: -310 }, { left: 0 }, { left: 310 }],
+})
+
+export function Card(props): Override {
+    // Get each item and store the id of the item in an array
+    const { id } = props
+    appState.cards.length == 3 ? null : appState.cards.push(id)
+
+    // Get the index of the card
+    let cardNumber = appState.cards.indexOf(id)
+    // Find the new position of the card based on where the index value is within the items array
+    let index = appState.items.indexOf(cardNumber)
+    // Get the left value of the new position
+    let position = appState.positions[index].left
+
+    return {
+        left: position,
+        // Animation value for transitioning between positions
+        positionTransition: {
+            type: "spring",
+            stiffness: 200,
+            damping: 25,
+        },
+    }
+}
+
+export function Left(): Override {
+    return {
+        onTap() {
+            // Push the third item to the first position
+            let lastItem = appState.items[2]
+            let sliceArray = appState.items.slice(0, 2)
+            sliceArray.splice(0, 0, lastItem)
+            appState.items = sliceArray
+        },
+    }
+}
+
+export function Right(): Override {
+    return {
+        onTap() {
+            // Push the first item to the third position
+            let firstItem = appState.items[0]
+            let sliceArray = appState.items.slice(1, 3)
+            sliceArray.push(firstItem)
+            appState.items = sliceArray
+        },
+    }
+}
+
+export function Circle(props): Override {
+    // Get each item and store the id of the item in an array
+    const { id } = props
+    appState.circles.length == 3 ? null : appState.circles.push(id)
+
+    // Get the index of the circle
+    let circleNumber = appState.circles.indexOf(id)
+
+    return {
+        opacity: appState.items[1] == circleNumber ? 1 : 0.5,
+    }
+}
+    </script>
+    <body>
+        
+    </body>
+</head>
+</html>

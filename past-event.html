@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PAST EVENTS</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+/*    border: 2px solid black;*/
+    cursor: pointer;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Responsive Image Grid</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="images/past1.png" style="width:100%">
+    <img src="images/past5.png" style="width:100%">
+    <img src="images/past11.png" style="width:100%">
+    <img src="images/past16.png" style="width:100%">
+    <img src="images/past19.png" style="width:100%">
+    <img src="images/past20.png" style="width:100%">
+    <img src="images/past21.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/past2.png" style="width:100%">
+    <img src="images/past6.png" style="width:100%">
+    <img src="images/past13.png" style="width:100%">
+    <img src="images/past17.png" style="width:100%">
+    <img src="images/past25.png" style="width:100%">
+    <img src="images/past26.png" style="width:100%">
+    <img src="images/past28.png" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="images/past3.png" style="width:100%">
+    <img src="images/past7.png" style="width:100%">
+    <img src="images/past14.png" style="width:100%">
+    <img src="images/past15.png" style="width:100%">
+    <img src="images/past18.png" style="width:100%">
+    <img src="images/past12.png" style="width:100%">
+    <img src="images/past23.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="images/past4.png" style="width:100%">
+    <img src="images/past9.png" style="width:100%">
+    <img src="images/past10.png" style="width:100%">
+    <img src="images/past8.png" style="width:100%">
+    <img src="images/past22.png" style="width:100%">
+    <img src="images/past24.png" style="width:100%">
+    <img src="images/past27.png" style="width:100%">
+  </div>
+</div>
+
+</body>
+</html>
